@@ -1,4 +1,18 @@
+<ws-view-toggle
+  (change)="activateView($event)"
+></ws-view-toggle>
+
+<hr>
+
 <ws-book-grid
+  *ngIf="activeView === view.Kachel; else list"
   [books]="books"
 >
 </ws-book-grid>
+
+<ng-template #list>
+  <ws-book-list
+    [books]="books"
+  >
+  </ws-book-list>
+</ng-template>
