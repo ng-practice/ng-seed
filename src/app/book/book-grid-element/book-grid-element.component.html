@@ -18,4 +18,18 @@
 <div class="authors">{{ data.authors }}</div>
 <div class="price">{{ data.price }}</div>
 <div class="rating">{{ data.rating }}</div>
-<div class="actions"></div>
+<div class="actions">
+  <!-- .btn-group>button.btn.btn-default*2 -->
+  <div class="btn-group">
+    <button
+      (click)="rateUp()"
+      class="btn btn-default">
+      <clr-icon shape="thumbs-up"></clr-icon>
+    </button>
+    <button
+      (click)="rateDown()"
+      class="btn btn-default">
+      <clr-icon shape="thumbs-down"></clr-icon>
+    </button>
+  </div>
+</div>

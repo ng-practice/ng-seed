@@ -5,6 +5,7 @@ export class Book {
     public isbn: string,
     public cover: string,
     public authors: string[],
+    public descripion?: string,
     public price = 0,
     public rating = 0
   ) { }
