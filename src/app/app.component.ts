@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Book } from './book/book';
 
 @Component({
   selector: 'ws-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ws';
+
+  book = new Book(
+    'Angular',
+    'The 3-day workshop',
+    '2121439432',
+    '',
+    ['Mîskó Hévéry'],
+    20,
+    5
+  );
 }
