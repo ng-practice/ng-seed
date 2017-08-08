@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { Book } from '../book';
 
@@ -12,7 +13,15 @@ export class BookAddFormComponent {
 
   @Output() create = new EventEmitter<Book>();
 
-  createNewBook() {
-    this.create.emit(this.book);
+  createNewBook(form: NgForm) {
+    const copy = Object.assign({}, this.book);
+    this.create.emit(copy);
+    form.reset();
+  }
+
+  adjustAuthors(value: string) {
+    if (!value) { return; }
+
+    this.book.authors = value.split(',');
   }
 }

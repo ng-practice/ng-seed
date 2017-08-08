@@ -11,6 +11,8 @@ export class BookGridComponent implements OnInit {
   _books: Book[];
 
   @Input() set books(books: Book[]) {
+    if (!books) { return; }
+
     this._books = books;
     this.reorder(null);
   }

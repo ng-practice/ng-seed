@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ClarityModule } from 'clarity-angular';
 
@@ -13,10 +14,13 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookListElementComponent } from './book-list-element/book-list-element.component';
 import { BookAddFormComponent } from './book-add-form/book-add-form.component';
 
+import { BookService } from './core/book.service';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
 
     ClarityModule.forChild(),
 
@@ -29,6 +33,12 @@ import { BookAddFormComponent } from './book-add-form/book-add-form.component';
     BookListComponent,
     BookListElementComponent,
     BookAddFormComponent],
-  exports: [BookGridElementComponent, BookGridComponent, ViewToggleComponent, BookListComponent, BookAddFormComponent]
+  exports: [
+    BookGridComponent,
+    ViewToggleComponent,
+    BookListComponent,
+    BookAddFormComponent
+  ],
+  providers: [BookService]
 })
 export class BookModule { }

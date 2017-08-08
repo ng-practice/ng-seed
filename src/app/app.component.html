@@ -1,20 +1,19 @@
 <br>
 <br>
-<br>
-<br>
-<br>
 
 <ws-book-add-form
   (create)="add($event)"
 ></ws-book-add-form>
-
-<hr>
 
 <ws-view-toggle
   (change)="activateView($event)"
 ></ws-view-toggle>
 
 <hr>
+
+<div>
+  {{ errorMessage }}
+</div>
 
 <ws-book-grid
   *ngIf="activeView === view.Kachel; else list"
