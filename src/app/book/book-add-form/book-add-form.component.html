@@ -1,3 +1,28 @@
-<p>
-  book-add-form works!
-</p>
+<form action="">
+  <section class="form-block">
+    <div class="form-group">
+      <label for="isbn_input">ISBN</label>
+      <input #isbn type="text" id="isbn_input">
+    </div>
+    <div class="form-group">
+      <label for="">TITLE</label>
+      <input #title type="text">
+    </div>
+    <div class="form-group">
+      <label for="">AUTHORS</label>
+      <input #authors type="text">
+    </div>
+    <div class="form-group">
+      <label for="">PRICE</label>
+      <input #price type="number">
+    </div>
+    <div class="form-group">
+      <label for="">DESCRIPTION</label>
+      <textarea #description type="text"></textarea>
+    </div>
+    <button
+      (click)="createNewBook(isbn, title, authors, price, description)"
+      type="button"
+      class="btn btn-primary">Create</button>
+  </section>
+</form>

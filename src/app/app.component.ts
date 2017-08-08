@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from './book/book';
-import { ViewType } from "./book/view-type";
+import { ViewType } from './book/view-type';
 
 @Component({
   selector: 'ws-root',
@@ -21,6 +21,10 @@ export class AppComponent implements OnInit {
       new Book('Angular', 'Grundlagen, fortgeschrittene Techniken und Best Practices mit TypeScript', '3864903572', '/assets/img/book-covers/angular-dpunkt.png', [ 'Johannes Hoppe', 'Ferdinand Malcher', 'Danny Koppenhagen', 'Gregor Woiwode'], 'Egal, ob Sie schon Erfahrung mit AngularJS 1.x haben oder nicht – mit diesem Buch gelingt Ihnen der schnelle Einstieg in das neue Angular-Framework ab Version 4. Anhand eines anspruchsvollen Beispielprojekts lernen Sie Schritt für Schritt, wie Sie strukturierte und modularisierte Single-Page-Anwendungen entwickeln. Praktisch: Der Programmcode zu jeder einzelnen Entwicklungsphase ist auf GitHub verfügbar. So können Sie einsteigen, wo Sie wollen, und nach Wunsch Entwicklungsschritte überspringen. In einem kompakten Schnellstart-Kapitel erstellen Sie zunächst eine erste funktionierende Anwendung. Danach machen Sie sich mit grundlegenden Angular-Konzepten und Techniken vertraut: Angular CLI, Komponenten und Template-Syntax, HTTP-Anbindung, Routing, Formulare (Reactive Forms & Template Driven Forms).'),
       new Book('Written in the Future', 'tbd.', 'tbd.', '', ['No One'], 'tbd.')
     ];
+  }
+
+  add(book: Book) {
+    this.books.push(book);
   }
 
   activateView(type: ViewType) {
