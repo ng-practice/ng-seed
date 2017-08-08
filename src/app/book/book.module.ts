@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { ClarityModule } from 'clarity-angular';
 
@@ -15,12 +16,19 @@ import { BookAddFormComponent } from './book-add-form/book-add-form.component';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
 
     ClarityModule.forChild(),
 
     UtilitiesModule
   ],
-  declarations: [BookGridElementComponent, BookGridComponent, ViewToggleComponent, BookListComponent, BookListElementComponent, BookAddFormComponent],
+  declarations: [
+    BookGridElementComponent,
+    BookGridComponent,
+    ViewToggleComponent,
+    BookListComponent,
+    BookListElementComponent,
+    BookAddFormComponent],
   exports: [BookGridElementComponent, BookGridComponent, ViewToggleComponent, BookListComponent, BookAddFormComponent]
 })
 export class BookModule { }

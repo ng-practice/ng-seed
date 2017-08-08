@@ -8,17 +8,11 @@ import { Book } from '../book';
   styleUrls: ['./book-add-form.component.scss']
 })
 export class BookAddFormComponent {
+  book = Book.empty();
+
   @Output() create = new EventEmitter<Book>();
 
-  createNewBook(isbn, title, authors, price, description) {
-    const book = new Book(title.value,
-                          '',
-                            isbn.value,
-                          '',
-                          authors.value,
-                          description.value,
-                          price.value);
-
-    this.create.emit(book);
+  createNewBook() {
+    this.create.emit(this.book);
   }
 }

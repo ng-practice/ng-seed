@@ -9,4 +9,8 @@ export class Book {
     public price = 0,
     public rating = 0
   ) { }
+
+  static empty() {
+    return new Book('', '', '', '', [], '');
+  }
 }

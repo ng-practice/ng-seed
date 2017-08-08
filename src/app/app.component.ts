@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   add(book: Book) {
-    this.books.push(book);
+    this.books = [...this.books, book];
   }
 
   activateView(type: ViewType) {
